@@ -44,11 +44,11 @@ class Index extends React.Component {
     const { isLoading, movies } = this.state;
     const onMore = () => {
       const page = this.state.page + 1;
-      this.getMovies(page);
-      this.setState({ 
+      this.setState({
         isLoading: true,
-        page: page 
+        page: page
       });
+      this.getMovies(page);
     };
     return (
       <Page>
@@ -57,10 +57,10 @@ class Index extends React.Component {
         ) : (
           <>
             <CardBlock>
-              {movies.map((movie) => {
+              {movies.map((movie, i) => {
                 return (
                   <CardItem
-                    key={movie.id}
+                    key={i}
                     id={movie.id}
                     year={movie.year}
                     title={movie.title}

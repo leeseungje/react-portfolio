@@ -10,10 +10,6 @@ const CardList = styled.div`
     -webkit-box-orient: vertical;
   }
 `;
-const Title = styled.h1`
-  font-size: 26px;
-  line-height: 28px;
-`;
 const MovieSummary = styled.p`
   position: relative;
   padding-left: 50px;

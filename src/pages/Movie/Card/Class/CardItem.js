@@ -123,7 +123,6 @@ const Rating = styled.em`
 `;
 
 function CardItem({ id, year, title, summary, poster, genres, rating }) {
-  console.log(genres)
   if (!genres) {
     return null;
   }
