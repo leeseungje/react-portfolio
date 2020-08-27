@@ -44,9 +44,11 @@ class Index extends React.Component {
     const { isLoading, movies } = this.state;
     const onMore = () => {
       const page = this.state.page + 1;
-      this.setState({ page: page });
       this.getMovies(page);
-      console.log(...movies);
+      this.setState({ 
+        isLoading: true,
+        page: page 
+      });
     };
     return (
       <Page>
