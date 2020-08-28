@@ -52,52 +52,28 @@ class Index extends React.Component {
     };
     return (
       <Page>
-        {isLoading ? (
-          <>
-            <Loading />
-            <CardBlock>
-              {movies.map((movie, i) => {
-                return (
-                  <CardItem
-                    key={i}
-                    id={movie.id}
-                    year={movie.year}
-                    title={movie.title}
-                    summary={movie.summary}
-                    poster={movie.medium_cover_image}
-                    genres={movie.genres}
-                    rating={movie.rating}
-                  />
-                );
-              })}
-            </CardBlock>
-            <Button type="primary" onClick={onMore} block>
-              MORE
-            </Button>
-          </>
-        ) : (
-          <>
-            <CardBlock>
-              {movies.map((movie, i) => {
-                return (
-                  <CardItem
-                    key={i}
-                    id={movie.id}
-                    year={movie.year}
-                    title={movie.title}
-                    summary={movie.summary}
-                    poster={movie.medium_cover_image}
-                    genres={movie.genres}
-                    rating={movie.rating}
-                  />
-                );
-              })}
-            </CardBlock>
-            <Button type="primary" onClick={onMore} block>
-              MORE
-            </Button>
-          </>
-        )}
+        <>
+          {isLoading && <Loading />}
+          <CardBlock>
+            {movies.map((movie, i) => {
+              return (
+                <CardItem
+                  key={i}
+                  id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                  genres={movie.genres}
+                  rating={movie.rating}
+                />
+              )
+            })}
+          </CardBlock>
+          <Button type="primary" onClick={onMore} block>
+            MORE
+          </Button>
+        </>
       </Page>
     );
   }
