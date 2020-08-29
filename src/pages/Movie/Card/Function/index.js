@@ -47,13 +47,11 @@ function MovieFunction() {
   return (
     <Page>
       {isLoading && <Loading />}
-      <div>
-        <CardBlock>
-          {movies.map((v, i) => {
-            return <CardItem key={i} poster={v.medium_cover_image} summary={v.summary} title={v.title} rating={v.rating} year={v.year} url={v.url} />;
-          })}
-        </CardBlock>
-      </div>
+      <CardBlock>
+        {movies.map((movie, i) => {
+          return <CardItem key={i} poster={movie.medium_cover_image} summary={movie.summary} title={movie.title} rating={movie.rating} year={movie.year} url={movie.url} />;
+        })}
+      </CardBlock>
       <Button type="primary" onClick={handleMore} block>MORE</Button>
     </Page>
   );
